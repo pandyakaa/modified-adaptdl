@@ -66,7 +66,6 @@ class GoodputFunction(object):
     def evaluate(self, num_nodes, num_replicas, atomic_bsz, accum_steps):
         batch_size = num_replicas * atomic_bsz * (accum_steps + 1)
         assert np.all(self._init_batch_size <= batch_size)
-        print(self.metrics_options)
         result = 0
         if self.metrics_options == "speed":
             result = self.throughput(num_nodes, num_replicas, atomic_bsz,
@@ -75,7 +74,6 @@ class GoodputFunction(object):
             result = self.throughput(num_nodes, num_replicas, atomic_bsz,
                                      accum_steps) * self.efficiency(batch_size)
         print(self.metrics_options)
-        print(result)
         return result
 
     def throughput(self, num_nodes, num_replicas, atomic_bsz, accum_steps):
