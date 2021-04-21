@@ -36,7 +36,7 @@ if __name__ == "__main__":
         author="Petuum Inc. & The AdaptDL Authors, modified by pandyakaa",
         author_email="aurick.qiao@petuum.com, pandyaka.aptanagi@gmail.com",
         description="Dynamic-resource trainer and scheduler for deep learning",
-        url="https://github.com/petuum/adaptdl",
+        url="https://github.com/pandyakaa/modified-adaptdl",
         classifiers=[
             "Programming Language :: Python :: 3",
             "License :: Other/Proprietary License",
