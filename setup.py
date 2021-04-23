@@ -31,8 +31,8 @@ def read_requirements(file_path):
 
 if __name__ == "__main__":
     setuptools.setup(
-        name="adaptdl-modified-pandyakaa",
-        version=os.getenv("ADAPTDL_VERSION", "0.0.0"),
+        name="adaptdl-modified-pandyaka",
+        version="1.0.2",
         author="Petuum Inc. & The AdaptDL Authors, modified by pandyakaa",
         author_email="aurick.qiao@petuum.com, pandyaka.aptanagi@gmail.com",
         description="Dynamic-resource trainer and scheduler for deep learning",
@@ -43,7 +43,8 @@ if __name__ == "__main__":
             "Operating System :: POSIX :: Linux",
         ],
         packages=setuptools.find_packages(include=["adaptdl",
-                                                   "adaptdl.*"]),
+                                                   "adaptdl.*",
+                                                   "adaptdl-modified-pandyaka"]),
         python_requires='>=3.6',
         install_requires=read_requirements("requirements.txt")
     )

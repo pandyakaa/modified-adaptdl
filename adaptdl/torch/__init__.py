@@ -60,13 +60,13 @@ def init_process_group(backend):
         master_addr = response.json()[0]
         sched_version = adaptdl.env.adaptdl_sched_version()
         trainer_version = pkg_resources.get_distribution("adaptdl").version
-        if version_check(sched_version) and version_check(trainer_version):
-            trainer_ver_maj = semver.VersionInfo.parse(trainer_version).major
-            sched_ver_maj = semver.VersionInfo.parse(sched_version).major
-            if trainer_ver_maj != sched_ver_maj:
-                raise Exception('adaptdl version {} is incompatible with'
-                                'scheduler version {}'.format(trainer_version,
-                                                              sched_version))
+        # if version_check(sched_version) and version_check(trainer_version):
+        #     trainer_ver_maj = semver.VersionInfo.parse(trainer_version).major
+        #     sched_ver_maj = semver.VersionInfo.parse(sched_version).major
+        #     if trainer_ver_maj != sched_ver_maj:
+        #         raise Exception('adaptdl version {} is incompatible with'
+        #                         'scheduler version {}'.format(trainer_version,
+        #                                                       sched_version))
     else:
         master_addr = adaptdl.env.master_addr()
 
